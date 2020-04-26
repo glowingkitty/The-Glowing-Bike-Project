@@ -1,0 +1,11 @@
+Adafruit-Blinka==4.6.0
+adafruit-circuitpython-neopixel==5.1.1
+Adafruit-PlatformDetect==2.8.0
+Adafruit-PureIO==1.1.5
+autopep8==1.5.2
+Colr==0.9.1
+pycodestyle==2.5.0
+pyftdi==0.50.2
+pyserial==3.4
+pyusb==1.0.2
+sysv-ipc==1.0.1
