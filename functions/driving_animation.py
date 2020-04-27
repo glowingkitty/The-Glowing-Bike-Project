@@ -4,15 +4,12 @@ class DrivingAnimation():
         self.bike = bike
 
         # make top leds of self.leds_front white and back leds of self.leds_front red
-        if self.bike.test:
-            for i in range(len(self.bike.leds_front.leds)):
-                color = (255*self.bike.animation_brightness, 255*self.bike.animation_brightness, 255*self.bike.animation_brightness) if i > (
-                    len(self.bike.leds_front.leds)/2) else (255*self.bike.animation_brightness, 0, 0)
+        for i in range(len(self.bike.leds_front.leds if self.bike.test else self.bike.leds_front)):
+            color = (255*self.bike.animation_brightness, 255*self.bike.animation_brightness, 255*self.bike.animation_brightness) if i > (
+                len(self.bike.leds_front.leds if self.bike.test else self.bike.leds_front)/2) else (255*self.bike.animation_brightness, 0, 0)
+            if self.bike.test:
                 self.bike.leds_front.leds[i] = color
-        else:
-            for i in range(len(self.bike.leds_front)):
-                color = (255*self.bike.animation_brightness, 255*self.bike.animation_brightness, 255*self.bike.animation_brightness) if i > (
-                    len(self.bike.leds_front.leds)/2) else (255*self.bike.animation_brightness, 0, 0)
+            else:
                 self.bike.leds_front[i] = color
 
         if self.bike.animation_up_and_down:

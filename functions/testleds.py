@@ -11,7 +11,7 @@ class TestLEDs():
 
     def write(self):
         print(
-            ''.join(color('    ', back=(x[0], x[1], x[2])) for x in self.leds))
+            ''.join(color('  ', back=(x[0], x[1], x[2])) for x in self.leds))
 
     def random_flashing(self):
         while True:

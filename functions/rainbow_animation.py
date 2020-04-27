@@ -7,15 +7,12 @@ class RainbowAnimation():
 
         # turn LEDs rainbow
         self.bike.time_passed += 0.06
-        if self.bike.test:
-            for i in range(len(self.bike.leds_front.leds)):
-                color = self.rainbow(self.bike.time_passed, i,
-                                     self.bike.animation_brightness)
+        for i in range(len(self.bike.leds_front.leds if self.bike.test else self.bike.leds_front)):
+            color = self.rainbow(self.bike.time_passed, i,
+                                 self.bike.animation_brightness)
+            if self.bike.test:
                 self.bike.leds_front.leds[i] = color
-        else:
-            for i in range(len(self.bike.leds_front)):
-                color = self.rainbow(self.bike.time_passed, i,
-                                     self.bike.animation_brightness)
+            else:
                 self.bike.leds_front[i] = color
 
         if self.bike.animation_up_and_down:
