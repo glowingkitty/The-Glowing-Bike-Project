@@ -2,23 +2,16 @@ import random
 import time
 
 from functions.driving_animation import DrivingAnimation
+from functions.neopixel_plus import NeoPixel
 from functions.rainbow_animation import RainbowAnimation
-from functions.testleds import TestLEDs
 from functions.turn_animation import TurnAnimation
 
 
 class Bike():
     def __init__(self, test=False):
-        if not test:
-            from neopixel import NeoPixel
-            from machine import Pin
-
-        self.leds_front = NeoPixel(
-            Pin(5, Pin.OUT), 30, bpp=3) if not test else TestLEDs(30)
-        self.leds_left = NeoPixel(
-            Pin(17, Pin.OUT), 5, bpp=3) if not test else TestLEDs(5)
-        self.leds_right = NeoPixel(
-            Pin(18, Pin.OUT), 5, bpp=3)if not test else TestLEDs(5)
+        self.leds_front = NeoPixel(pin=5, n=30, bpp=3, test=test)
+        self.leds_left = NeoPixel(pin=17, n=5, bpp=3, test=test)
+        self.leds_right = NeoPixel(pin=18, n=5, bpp=3, test=test)
         self.mode = 'relaxed'
         self.time_passed = 0
         self.animation_brightness = 0.0
