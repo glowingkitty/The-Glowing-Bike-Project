@@ -2,11 +2,10 @@ import random
 import time
 
 import keyboard
+from neopixel_plus import NeoPixel
 
 from functions.driving_animation import DrivingAnimation
 from functions.fadeout_animation import FadeOutAnimation
-from functions.neopixel_plus import NeoPixel
-from functions.rainbow_animation import RainbowAnimation
 from functions.turn_animation import TurnAnimation
 
 
@@ -70,8 +69,6 @@ class Bike():
             print()
             print()
 
-            time.sleep(1.0/36.0)
-
     @property
     def switch_left(self):
         if self.test:
@@ -110,7 +107,7 @@ class Bike():
 
     def rainbow_animation(self):
         # relaxed mode
-        self = RainbowAnimation(bike=self).bike
+        self.leds_front.rainbow_animation(loop=False)
 
     def driving_animation(self):
         # safe mode
