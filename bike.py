@@ -11,9 +11,9 @@ from functions.turn_animation import TurnAnimation
 
 class Bike():
     def __init__(self, test=False):
-        self.leds_front = NeoPixel(pin=5, n=30, bpp=3, test=test)
-        self.leds_left = NeoPixel(pin=17, n=5, bpp=3, test=test)
-        self.leds_right = NeoPixel(pin=18, n=5, bpp=3, test=test)
+        self.leds_front = NeoPixel(pin=14, n=9, bpp=3, test=test)
+        self.leds_center = NeoPixel(pin=12, n=60, bpp=3, test=test)
+        self.leds_back = NeoPixel(pin=13, n=60, bpp=3, test=test)
         self.mode = 'relaxed'
         self.time_passed = 0
         self.animation_brightness = 0.0
@@ -35,37 +35,31 @@ class Bike():
 
             if self.switches['left'] == True and self.switches['right'] == True:
                 self.mode = 'relaxed'
-                self.fade_out('left')
-                self.fade_out('right')
                 self.rainbow_animation()
 
             elif self.switches['left'] == False and self.switches['right'] == False:
                 self.mode = 'safe'
-                self.fade_out('left')
-                self.fade_out('right')
                 self.driving_animation()
 
             elif self.switches['left'] == True:
                 self.mode = 'turn_left'
-                self.fade_out('front')
-                self.fade_out('right')
+                self.fade_out('center')
                 self.turn_left()
 
             elif self.switches['right'] == True:
                 self.mode = 'turn_right'
-                self.fade_out('front')
-                self.fade_out('left')
+                self.fade_out('center')
                 self.turn_right()
 
             # show status of switches
             print('Switch left: {}'.format(self.switches['left']))
             print('Switch right: {}'.format(self.switches['right']))
             print()
-            self.leds_left.write()
-            print()
             self.leds_front.write()
             print()
-            self.leds_right.write()
+            self.leds_center.write()
+            print()
+            self.leds_back.write()
             print()
             print()
 
@@ -82,7 +76,7 @@ class Bike():
             return self.switch_left_value
         else:
             from machine import Pin
-            return Pin(10, Pin.OUT)
+            return Pin(3, Pin.IN)
 
     @property
     def switch_right(self):
@@ -97,7 +91,7 @@ class Bike():
             return self.switch_right_value
         else:
             from machine import Pin
-            return Pin(11, Pin.OUT)
+            return Pin(15, Pin.IN)
 
     def turn_right(self):
         self = TurnAnimation(bike=self, direction='right').bike
@@ -107,7 +101,7 @@ class Bike():
 
     def rainbow_animation(self):
         # relaxed mode
-        self.leds_front.rainbow_animation(loop=False)
+        self.leds_center.rainbow_animation(loop=False)
 
     def driving_animation(self):
         # safe mode
