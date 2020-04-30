@@ -1,7 +1,6 @@
 import random
 import time
 
-import keyboard
 from neopixel_plus import NeoPixel
 
 from functions.driving_animation import DrivingAnimation
@@ -11,9 +10,9 @@ from functions.turn_animation import TurnAnimation
 
 class Bike():
     def __init__(self, test=False):
-        self.leds_front = NeoPixel(pin=14, n=9, bpp=3, test=test)
-        self.leds_center = NeoPixel(pin=12, n=60, bpp=3, test=test)
-        self.leds_back = NeoPixel(pin=13, n=60, bpp=3, test=test)
+        self.leds_front = NeoPixel(pin_num=14, n=9, bpp=3, test=test)
+        self.leds_center = NeoPixel(pin_num=12, n=60, bpp=3, test=test)
+        self.leds_back = NeoPixel(pin_num=13, n=60, bpp=3, test=test)
         self.mode = 'relaxed'
         self.time_passed = 0
         self.animation_brightness = 0.0
@@ -66,6 +65,7 @@ class Bike():
     @property
     def switch_left(self):
         if self.test:
+            import keyboard
             # check if keyboard right was pressed
             if keyboard.is_pressed('left'):
                 if self.switch_left_value == 0:
@@ -76,11 +76,12 @@ class Bike():
             return self.switch_left_value
         else:
             from machine import Pin
-            return Pin(3, Pin.IN)
+            return Pin(3, Pin.IN).value()
 
     @property
     def switch_right(self):
         if self.test:
+            import keyboard
             # check if keyboard right was pressed
             if keyboard.is_pressed('right'):
                 if self.switch_right_value == 0:
@@ -91,7 +92,8 @@ class Bike():
             return self.switch_right_value
         else:
             from machine import Pin
-            return Pin(15, Pin.IN)
+            # TODO pin value not working
+            return Pin(15, Pin.IN).value()
 
     def turn_right(self):
         self = TurnAnimation(bike=self, direction='right').bike
@@ -109,6 +111,3 @@ class Bike():
 
     def fade_out(self, led_strip):
         self = FadeOutAnimation(bike=self, led_strip=led_strip).bike
-
-
-Bike(test=True).start_driving()

@@ -4,17 +4,17 @@ class TurnAnimation():
         # turn LEDs red
         self.bike = bike
 
-        for i in range(len(self.bike.leds_center.leds)):
-            color = (255*self.bike.animation_brightness, 0, 0)
+        for i in range(self.bike.leds_center.strip_length):
+            color = (round(255*self.bike.animation_brightness), 0, 0)
             if direction == 'right':
                 # make leds right red, left dark
-                if i >= len(self.bike.leds_center.leds)/2:
+                if i >= round(self.bike.leds_center.strip_length/2):
                     self.bike.leds_center.leds[i] = (255, 0, 0)
                 else:
                     self.bike.leds_center.leds[i] = (0, 0, 0)
 
             elif direction == 'left':
-                if i <= len(self.bike.leds_center.leds)/2:
+                if i <= round(self.bike.leds_center.strip_length/2):
                     self.bike.leds_center.leds[i] = (255, 0, 0)
                 else:
                     self.bike.leds_center.leds[i] = (0, 0, 0)
