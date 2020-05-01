@@ -12,21 +12,24 @@ class Bike():
     def __init__(self,
                  leds_front_pin=13,
                  leds_front_length=9,
+                 leds_front_start_point=0,
                  leds_center_pin=12,
                  leds_center_length=60,
+                 leds_center_start_point=0,
                  leds_back_pin=14,
-                 leds_back_length=60,
+                 leds_back_length=58,
+                 leds_back_start_point=-3,
                  switch_left_pin=15,
                  switch_right_pin=3,
                  test=False
                  ):
         # setting up the LEDs
         self.leds_front = NeoPixel(
-            pin_num=leds_front_pin, n=leds_front_length, bpp=3, test=test) if leds_front_pin and leds_front_length else None
+            pin_num=leds_front_pin, n=leds_front_length, start_point=leds_front_start_point, bpp=3, test=test) if leds_front_pin and leds_front_length else None
         self.leds_center = NeoPixel(
-            pin_num=leds_center_pin, n=leds_center_length, bpp=3, test=test) if leds_center_pin and leds_center_length else None
+            pin_num=leds_center_pin, n=leds_center_length, start_point=leds_center_start_point, bpp=3, test=test) if leds_center_pin and leds_center_length else None
         self.leds_back = NeoPixel(
-            pin_num=leds_back_pin, n=leds_back_length, bpp=3, test=test) if leds_back_pin and leds_back_length else None
+            pin_num=leds_back_pin, n=leds_back_length, start_point=leds_back_start_point, bpp=3, test=test) if leds_back_pin and leds_back_length else None
         self.mode = 'relaxed'
         self.time_passed = 0
         self.animation_brightness = 0.0
@@ -93,6 +96,13 @@ class Bike():
                 self.leds_back.write()
                 print()
             print()
+
+    def restart(self):
+        if self.test:
+            print('Restart can only be performed on real hardware, not in test mode.')
+        else:
+            import machine
+            machine.reset()
 
     @property
     def switch_left(self):
