@@ -9,22 +9,39 @@ from functions.turn_animation import TurnAnimation
 
 
 class Bike():
-    def __init__(self, test=False):
-        self.leds_front = NeoPixel(pin_num=14, n=9, bpp=3, test=test)
-        self.leds_center = NeoPixel(pin_num=12, n=60, bpp=3, test=test)
-        self.leds_back = NeoPixel(pin_num=13, n=60, bpp=3, test=test)
+    def __init__(self,
+                 leds_front_pin=13,
+                 leds_front_length=9,
+                 leds_center_pin=12,
+                 leds_center_length=60,
+                 leds_back_pin=14,
+                 leds_back_length=60,
+                 switch_left_pin=15,
+                 switch_right_pin=3,
+                 test=False
+                 ):
+        # setting up the LEDs
+        self.leds_front = NeoPixel(
+            pin_num=leds_front_pin, n=leds_front_length, bpp=3, test=test) if leds_front_pin and leds_front_length else None
+        self.leds_center = NeoPixel(
+            pin_num=leds_center_pin, n=leds_center_length, bpp=3, test=test) if leds_center_pin and leds_center_length else None
+        self.leds_back = NeoPixel(
+            pin_num=leds_back_pin, n=leds_back_length, bpp=3, test=test) if leds_back_pin and leds_back_length else None
         self.mode = 'relaxed'
         self.time_passed = 0
         self.animation_brightness = 0.0
         self.animation_direction = 'up'
         self.animation_up_and_down = True
 
+        # setting up the switches
+        self.switch_left_pin = switch_left_pin
+        self.switch_right_pin = switch_right_pin
         self.switch_right_value = 0
         self.switch_left_value = 0
 
         self.test = test
 
-    def start_driving(self):
+    def on(self):
         while True:
             # check if mode has changed
             self.switches = {
@@ -32,38 +49,56 @@ class Bike():
                 'right': self.switch_right
             }
 
-            if self.switches['left'] == True and self.switches['right'] == True:
-                self.mode = 'relaxed'
-                self.rainbow_animation()
+            if self.switches['right'] and self.switches['left']:
+                # dual switch mode
+                if self.switches['left'] == True and self.switches['right'] == True:
+                    self.mode = 'relaxed'
+                    self.rainbow_animation()
 
-            elif self.switches['left'] == False and self.switches['right'] == False:
-                self.mode = 'safe'
-                self.driving_animation()
+                elif self.switches['left'] == False and self.switches['right'] == False:
+                    self.mode = 'safe'
+                    self.driving_animation()
 
-            elif self.switches['left'] == True:
-                self.mode = 'turn_left'
-                self.fade_out('center')
-                self.turn_left()
+                elif self.switches['left'] == True:
+                    self.mode = 'turn_left'
+                    self.fade_out('center')
+                    self.turn_left()
 
-            elif self.switches['right'] == True:
-                self.mode = 'turn_right'
-                self.fade_out('center')
-                self.turn_right()
+                elif self.switches['right'] == True:
+                    self.mode = 'turn_right'
+                    self.fade_out('center')
+                    self.turn_right()
+
+            else:
+                # single switch mode
+                if self.switches['right'] == True:
+                    self.mode = 'relaxed'
+                    self.rainbow_animation()
+
+                else:
+                    self.mode = 'safe'
+                    self.driving_animation()
 
             # show status of switches
             print('Switch left: {}'.format(self.switches['left']))
             print('Switch right: {}'.format(self.switches['right']))
             print()
-            self.leds_front.write()
-            print()
-            self.leds_center.write()
-            print()
-            self.leds_back.write()
-            print()
+            if self.leds_front:
+                self.leds_front.write()
+                print()
+            if self.leds_center:
+                self.leds_center.write()
+                print()
+            if self.leds_back:
+                self.leds_back.write()
+                print()
             print()
 
     @property
     def switch_left(self):
+        if not self.switch_left_pin:
+            return None
+
         if self.test:
             import keyboard
             # check if keyboard right was pressed
@@ -76,10 +111,14 @@ class Bike():
             return self.switch_left_value
         else:
             from machine import Pin
-            return Pin(3, Pin.IN).value()
+            # TODO pin value not working
+            return Pin(self.switch_left_pin, Pin.IN).value()
 
     @property
     def switch_right(self):
+        if not self.switch_right_pin:
+            return None
+
         if self.test:
             import keyboard
             # check if keyboard right was pressed
@@ -92,8 +131,7 @@ class Bike():
             return self.switch_right_value
         else:
             from machine import Pin
-            # TODO pin value not working
-            return Pin(15, Pin.IN).value()
+            return Pin(self.switch_right_pin, Pin.IN).value()
 
     def turn_right(self):
         self = TurnAnimation(bike=self, direction='right').bike
@@ -103,7 +141,9 @@ class Bike():
 
     def rainbow_animation(self):
         # relaxed mode
-        self.leds_center.rainbow_animation(loop=False)
+        self.leds_front.on()
+        self.leds_center.rainbow_animation(limit=1)
+        self.leds_back.rainbow_animation(limit=1)
 
     def driving_animation(self):
         # safe mode
