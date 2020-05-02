@@ -25,11 +25,11 @@ class Bike():
                  ):
         # setting up the LEDs
         self.leds_front = NeoPixel(
-            pin_num=leds_front_pin, n=leds_front_length, start_point=leds_front_start_point, bpp=3, test=test) if leds_front_pin and leds_front_length else None
+            pin_num=leds_front_pin, n=leds_front_length, start_point=leds_front_start_point, brightness=1, bpp=3, test=test) if leds_front_pin and leds_front_length else None
         self.leds_center = NeoPixel(
             pin_num=leds_center_pin, n=leds_center_length, start_point=leds_center_start_point, bpp=3, test=test) if leds_center_pin and leds_center_length else None
         self.leds_back = NeoPixel(
-            pin_num=leds_back_pin, n=leds_back_length, start_point=leds_back_start_point, bpp=3, test=test) if leds_back_pin and leds_back_length else None
+            pin_num=leds_back_pin, n=leds_back_length, start_point=leds_back_start_point, brightness=1, bpp=3, test=test) if leds_back_pin and leds_back_length else None
         self.mode = 'relaxed'
         self.time_passed = 0
         self.animation_brightness = 0.0
@@ -52,24 +52,22 @@ class Bike():
                 'right': self.switch_right
             }
 
-            if self.switches['right'] and self.switches['left']:
+            if type(self.switches['right']) == int and type(self.switches['left']) == int:
                 # dual switch mode
-                if self.switches['left'] == True and self.switches['right'] == True:
+                if self.switches['left'] == 1 and self.switches['right'] == 1:
                     self.mode = 'relaxed'
                     self.rainbow_animation()
 
-                elif self.switches['left'] == False and self.switches['right'] == False:
+                elif self.switches['left'] == 0 and self.switches['right'] == 0:
                     self.mode = 'safe'
                     self.driving_animation()
 
-                elif self.switches['left'] == True:
+                elif self.switches['left'] == 1:
                     self.mode = 'turn_left'
-                    self.fade_out('center')
                     self.turn_left()
 
-                elif self.switches['right'] == True:
+                elif self.switches['right'] == 1:
                     self.mode = 'turn_right'
-                    self.fade_out('center')
                     self.turn_right()
 
             else:
@@ -144,9 +142,11 @@ class Bike():
             return Pin(self.switch_right_pin, Pin.IN).value()
 
     def turn_right(self):
+        print('turn_right')
         self = TurnAnimation(bike=self, direction='right').bike
 
     def turn_left(self):
+        print('turn_left')
         self = TurnAnimation(bike=self, direction='left').bike
 
     def rainbow_animation(self):

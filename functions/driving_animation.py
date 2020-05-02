@@ -18,7 +18,7 @@ class DrivingAnimation():
 
         # make back part of back leds red up
         for i in range(self.bike.leds_back.strip_length):
-            if i < round(self.bike.leds_back.strip_length/2)-5 or i > round(self.bike.leds_back.strip_length/2)+4:
+            if i < round(self.bike.leds_back.strip_length/2)-6 or i > round(self.bike.leds_back.strip_length/2)+5:
                 color = (0, 0, 0)
             else:
                 color = (255, 0, 0)
