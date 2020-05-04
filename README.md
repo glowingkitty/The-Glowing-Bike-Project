@@ -1,4 +1,4 @@
-# The Glowing Bike Project
+![alt text](/headerimage.jpg "The Glowing Bike Project")
 
 Upgrade your bike with LEDs, raibows and turn signals.
 
