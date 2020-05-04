@@ -19,8 +19,8 @@ class Bike():
                  leds_back_pin=14,
                  leds_back_length=58,
                  leds_back_start_point=-4,
-                 switch_left_pin=15,
-                 switch_right_pin=3,
+                 switch_left_pin=3,
+                 switch_right_pin=1,
                  test=False
                  ):
         # setting up the LEDs
@@ -62,11 +62,11 @@ class Bike():
                     self.mode = 'safe'
                     self.driving_animation()
 
-                elif self.switches['left'] == 1:
+                elif self.mode == 'turn_left' or (self.mode == 'safe' and self.switches['left'] == 1) or (self.mode == 'relaxed' and self.switches['left'] == 0):
                     self.mode = 'turn_left'
                     self.turn_left()
 
-                elif self.switches['right'] == 1:
+                elif self.mode == 'turn_right' or (self.mode == 'safe' and self.switches['right'] == 1) or (self.mode == 'relaxed' and self.switches['right'] == 0):
                     self.mode = 'turn_right'
                     self.turn_right()
 
@@ -151,7 +151,7 @@ class Bike():
 
     def rainbow_animation(self):
         # relaxed mode
-        self.leds_front.on()
+        self.leds_front.rainbow_animation(limit=1)
         self.leds_center.rainbow_animation(limit=1)
         self.leds_back.rainbow_animation(limit=1)
 

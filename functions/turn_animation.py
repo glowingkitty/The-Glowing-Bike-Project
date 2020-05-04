@@ -20,12 +20,13 @@ class TurnAnimation():
         if self.direction == 'right':
             for i in range(self.bike.leds_front.lastlightup):
                 led_num = self.bike.leds_front.get_led(led_front_middle+i)
-                self.bike.leds_front.leds[led_num] = (255, 255, 255)
+                # TODO make white in the middle and yellow on the side
+                self.bike.leds_front.leds[led_num] = (255, 242, 0)
 
         elif self.direction == 'left':
             for i in range(self.bike.leds_front.lastlightup):
                 led_num = self.bike.leds_front.get_led(led_front_middle-i)
-                self.bike.leds_front.leds[led_num] = (255, 255, 255)
+                self.bike.leds_front.leds[led_num] = (255, 242, 0)
 
         if led_front_middle + self.bike.leds_front.lastlightup == self.bike.leds_front.strip_length:
             self.bike.leds_front.glow_direction = 'down'
@@ -55,31 +56,31 @@ class TurnAnimation():
         led_back_middle = round(self.bike.leds_back.strip_length/2)
         if self.direction == 'right':
             for i in range(self.bike.leds_back.lastlightup):
-                led_num = self.bike.leds_back.get_led(led_back_middle+i+5)
-                if self.bike.leds_back.strip_length >= led_back_middle+i+5:
-                    self.bike.leds_back.leds[led_num] = (255, 0, 0)
-                if self.bike.leds_back.strip_length >= led_back_middle+i+5+1:
-                    self.bike.leds_back.leds[led_num+1] = (255, 0, 0)
-                if self.bike.leds_back.strip_length >= led_back_middle+i+5+2:
-                    self.bike.leds_back.leds[led_num+2] = (255, 0, 0)
-                if self.bike.leds_back.strip_length >= led_back_middle+i+5+3:
-                    self.bike.leds_back.leds[led_num+3] = (255, 0, 0)
-                if self.bike.leds_back.strip_length >= led_back_middle+i+5+4:
-                    self.bike.leds_back.leds[led_num+4] = (255, 0, 0)
+                led_num = self.bike.leds_back.get_led(led_back_middle+i+3)
+                if self.bike.leds_back.strip_length >= led_back_middle+i+3:
+                    self.bike.leds_back.leds[led_num] = (255, 242, 0)
+                if self.bike.leds_back.strip_length >= led_back_middle+i+3+1:
+                    self.bike.leds_back.leds[led_num+1] = (255, 242, 0)
+                if self.bike.leds_back.strip_length >= led_back_middle+i+3+2:
+                    self.bike.leds_back.leds[led_num+2] = (255, 242, 0)
+                if self.bike.leds_back.strip_length >= led_back_middle+i+3+3:
+                    self.bike.leds_back.leds[led_num+3] = (255, 242, 0)
+                if self.bike.leds_back.strip_length >= led_back_middle+i+3+4:
+                    self.bike.leds_back.leds[led_num+4] = (255, 242, 0)
 
         elif self.direction == 'left':
             for i in range(self.bike.leds_back.lastlightup):
-                led_num = self.bike.leds_back.get_led(led_back_middle-i-6)
-                if self.bike.leds_back.strip_length >= led_back_middle+i+5:
-                    self.bike.leds_back.leds[led_num] = (255, 0, 0)
-                if self.bike.leds_back.strip_length >= led_back_middle+i+5+1:
-                    self.bike.leds_back.leds[led_num-1] = (255, 0, 0)
-                if self.bike.leds_back.strip_length >= led_back_middle+i+5+2:
-                    self.bike.leds_back.leds[led_num-2] = (255, 0, 0)
-                if self.bike.leds_back.strip_length >= led_back_middle+i+5+3:
-                    self.bike.leds_back.leds[led_num-3] = (255, 0, 0)
-                if self.bike.leds_back.strip_length >= led_back_middle+i+5+4:
-                    self.bike.leds_back.leds[led_num-4] = (255, 0, 0)
+                led_num = self.bike.leds_back.get_led(led_back_middle-i-4)
+                if self.bike.leds_back.strip_length >= led_back_middle+i+4:
+                    self.bike.leds_back.leds[led_num] = (255, 242, 0)
+                if self.bike.leds_back.strip_length >= led_back_middle+i+4+1:
+                    self.bike.leds_back.leds[led_num-1] = (255, 242, 0)
+                if self.bike.leds_back.strip_length >= led_back_middle+i+4+2:
+                    self.bike.leds_back.leds[led_num-2] = (255, 242, 0)
+                if self.bike.leds_back.strip_length >= led_back_middle+i+4+3:
+                    self.bike.leds_back.leds[led_num-3] = (255, 242, 0)
+                if self.bike.leds_back.strip_length >= led_back_middle+i+4+4:
+                    self.bike.leds_back.leds[led_num-4] = (255, 242, 0)
 
         if led_back_middle+5 + self.bike.leds_back.lastlightup >= self.bike.leds_back.strip_length-2:
             self.bike.leds_back.glow_direction = 'down'
@@ -96,12 +97,6 @@ class TurnAnimation():
         self.bike.leds_back.leds[led_num] = (255, 0, 0)
         self.bike.leds_back.leds[led_num+1] = (255, 0, 0)
         self.bike.leds_back.leds[led_num+2] = (255, 0, 0)
-        self.bike.leds_back.leds[led_num+3] = (255, 0, 0)
-        self.bike.leds_back.leds[led_num+4] = (255, 0, 0)
-        self.bike.leds_back.leds[led_num+5] = (255, 0, 0)
         self.bike.leds_back.leds[led_num-1] = (255, 0, 0)
         self.bike.leds_back.leds[led_num-2] = (255, 0, 0)
         self.bike.leds_back.leds[led_num-3] = (255, 0, 0)
-        self.bike.leds_back.leds[led_num-4] = (255, 0, 0)
-        self.bike.leds_back.leds[led_num-5] = (255, 0, 0)
-        self.bike.leds_back.leds[led_num-6] = (255, 0, 0)
