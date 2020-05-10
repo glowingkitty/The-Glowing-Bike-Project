@@ -1,4 +1,4 @@
-![alt text](/headerimage.jpg "The Glowing Bike Project")
+![The Glowing Bike Project](/headerimage.jpg "The Glowing Bike Project")
 
 Upgrade your bike with LEDs, raibows and turn signals.
 
@@ -8,6 +8,8 @@ Want to support the development financially? Donations are always welcomed!
 [Click here to donate on Liberapay](https://liberapay.com/marcoEDU)
 
 [<img src="http://img.shields.io/liberapay/receives/marcoEDU.svg?logo=liberapay">](https://liberapay.com/marcoEDU)
+
+[Click here](#photos) to see photos of the bike.
 
 ## Features
 
@@ -61,3 +63,20 @@ Want to support the development financially? Donations are always welcomed!
 - fix the fabric, LED strips and wires using cable ties
 
 Done! Turn on all three switches and you are ready to drive:)
+
+
+## Photos
+
+![Photo](/photos/IMGP0449.jpeg "Photo")
+![Photo](/photos/IMGP0452.jpeg "Photo")
+![Photo](/photos/IMGP0469.jpeg "Photo")
+![Photo](/photos/IMGP0473.jpeg "Photo")
+![Photo](/photos/IMGP0475.jpeg "Photo")
+![Photo](/photos/IMGP0476.jpeg "Photo")
+![Photo](/photos/IMGP0478.jpeg "Photo")
+![Photo](/photos/IMGP0484.jpeg "Photo")
+![Photo](/photos/IMGP0491.jpeg "Photo")
+![Photo](/photos/IMGP0496.jpeg "Photo")
+![Photo](/photos/IMGP0497.jpeg "Photo")
+![Photo](/photos/IMGP0507.jpeg "Photo")
+![Photo](/photos/IMGP0508.jpeg "Photo")
