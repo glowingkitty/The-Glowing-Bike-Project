@@ -1,4 +1,4 @@
-![The Glowing Bike Project](/headerimage.jpg "The Glowing Bike Project")
+![The Glowing Bike Project](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/headerimage.jpg "The Glowing Bike Project")
 
 Upgrade your bike with LEDs, raibows and turn signals.
 
@@ -38,9 +38,21 @@ Want to support the development financially? Donations are always welcomed!
 ### Software
 
 - Python 3
-- this repo
+- clone this repo
 - latest MicroPython for your [ESP8266](http://micropython.org/download/esp8266/) or [ESP32](http://micropython.org/download/esp32/) (.bin file)
 
+
+## How to test the code
+
+```pip install glowingbike```
+
+```sudo python```
+
+```
+from glowingbike import Bike
+
+Bike(test=True).on()
+```
 
 ## How to upgrade your bike
 
@@ -67,16 +79,16 @@ Done! Turn on all three switches and you are ready to drive:)
 
 ## Photos
 
-![Photo](/photos/IMGP0449.jpeg "Photo")
-![Photo](/photos/IMGP0452.jpeg "Photo")
-![Photo](/photos/IMGP0469.jpeg "Photo")
-![Photo](/photos/IMGP0473.jpeg "Photo")
-![Photo](/photos/IMGP0475.jpeg "Photo")
-![Photo](/photos/IMGP0476.jpeg "Photo")
-![Photo](/photos/IMGP0478.jpeg "Photo")
-![Photo](/photos/IMGP0484.jpeg "Photo")
-![Photo](/photos/IMGP0491.jpeg "Photo")
-![Photo](/photos/IMGP0496.jpeg "Photo")
-![Photo](/photos/IMGP0497.jpeg "Photo")
-![Photo](/photos/IMGP0507.jpeg "Photo")
-![Photo](/photos/IMGP0508.jpeg "Photo")
+![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/photos/IMGP0449.jpeg "Photo")
+![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/photos/IMGP0452.jpeg "Photo")
+![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/photos/IMGP0469.jpeg "Photo")
+![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/photos/IMGP0473.jpeg "Photo")
+![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/photos/IMGP0475.jpeg "Photo")
+![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/photos/IMGP0476.jpeg "Photo")
+![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/photos/IMGP0478.jpeg "Photo")
+![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/photos/IMGP0484.jpeg "Photo")
+![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/photos/IMGP0491.jpeg "Photo")
+![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/photos/IMGP0496.jpeg "Photo")
+![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/photos/IMGP0497.jpeg "Photo")
+![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/photos/IMGP0507.jpeg "Photo")
+![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/photos/IMGP0508.jpeg "Photo")

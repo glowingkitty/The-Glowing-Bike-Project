@@ -3,9 +3,9 @@ import time
 
 from neopixel_plus import NeoPixel
 
-from functions.driving_animation import DrivingAnimation
-from functions.fadeout_animation import FadeOutAnimation
-from functions.turn_animation import TurnAnimation
+from glowingbike.functions.driving_animation import DrivingAnimation
+from glowingbike.functions.fadeout_animation import FadeOutAnimation
+from glowingbike.functions.turn_animation import TurnAnimation
 
 
 class Bike():
