@@ -63,6 +63,8 @@ Bike(test=True).on()
 - create 'functions' folder on ESP, with all files from the ['functions' folder of The Glowing Bike Project](https://github.com/marcoEDU/The-Glowing-Bike-Project/tree/master/functions)
 - copy 'main.py' and 'bike.py' to main directory
 
+### Electronics overview
+![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/diagram.jpg "Photo")
 
 ### Hardware
 
@@ -70,7 +72,7 @@ Bike(test=True).on()
 - for each LED strip solder the LED strip power and ground to the power and ground of one of the USB cables with a switch in the middle (on Micro USB side) - and connect the power and ground of the ESP to the USB cable with the least amount of LEDs connected
 - solder the data cables of the LED strips to the ESP (GPIO 13 for the front LEDs, GPIO 12 for the center LEDs and GPIO 14 for the back LEDs)
 - connect the USB cables with the external battery and fix the battery on the back of your bike
-- fix the toggle switches to your bike handlebar at the front (using tape and cable ties) and solder it to the ESP (use GPIO 3 for the data pin of theleft switch, GPIO 1 for the right switch)
+- fix the toggle switches to your bike handlebar at the front (using tape and cable ties) and solder it to the ESP (use GPIO 3 for the data pin of the left switch, GPIO 1 for the right switch)
 - once you connected all the electronics, cut out pieces of fabric to cover the cables connecting the front LED strip and switches, cover the bike with your fabric and make sure the LEDs aren't covered with the fabric
 - fix the fabric, LED strips and wires using cable ties
 
