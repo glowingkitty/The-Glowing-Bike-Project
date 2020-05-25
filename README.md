@@ -5,9 +5,8 @@ Upgrade your bike with LEDs, raibows and turn signals.
 Want your bike getting upgraded by me or do you have some ideas for the project? [Fill out this contact form.](https://docs.google.com/forms/d/e/1FAIpQLScwD0kZ9ohC06ihu6lKF8d86BmgP3NqM1V3uUNWWPCblUQcxw/viewform?usp=sf_link)
 
 Want to support the development financially? Donations are always welcomed! 
-[Click here to donate on Liberapay](https://liberapay.com/marcoEDU)
 
-[<img src="http://img.shields.io/liberapay/receives/marcoEDU.svg?logo=liberapay">](https://liberapay.com/marcoEDU)
+<a href="https://liberapay.com/marcoEDU/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
 
 [Click here](#photos) to see photos of the bike.
 
