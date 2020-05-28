@@ -4,9 +4,9 @@ Upgrade your bike with LEDs, raibows and turn signals.
 
 Want your bike getting upgraded by me or do you have some ideas for the project? [Fill out this contact form.](https://docs.google.com/forms/d/e/1FAIpQLScwD0kZ9ohC06ihu6lKF8d86BmgP3NqM1V3uUNWWPCblUQcxw/viewform?usp=sf_link)
 
-Want to support the development financially? Donations are always welcomed! 
+Want to support the development and stay updated?
 
-<a href="https://liberapay.com/marcoEDU/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+<a href="https://www.patreon.com/bePatron?u=24983231"><img alt="Become a Patreon" src="images/patreon_button.svg"></a> <a href="https://liberapay.com/marcoEDU/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
 
 [Click here](#photos) to see photos of the bike.
 
@@ -63,7 +63,7 @@ Bike(test=True).on()
 - copy 'main.py' and 'bike.py' to main directory
 
 ### Electronics overview
-![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/diagram.jpg "Photo")
+![Photo](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/images/diagram.jpg "Photo")
 
 ### Hardware
 
