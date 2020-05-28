@@ -1,4 +1,4 @@
-![The Glowing Bike Project](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/headerimage.jpg "The Glowing Bike Project")
+![The Glowing Bike Project](https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/images/headerimage.jpg "The Glowing Bike Project")
 
 Upgrade your bike with LEDs, raibows and turn signals.
 
@@ -6,7 +6,7 @@ Want your bike getting upgraded by me or do you have some ideas for the project?
 
 Want to support the development and stay updated?
 
-<a href="https://www.patreon.com/bePatron?u=24983231"><img alt="Become a Patreon" src="images/patreon_button.svg"></a> <a href="https://liberapay.com/marcoEDU/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+<a href="https://www.patreon.com/bePatron?u=24983231"><img alt="Become a Patreon" src="https://raw.githubusercontent.com/marcoEDU/The-Glowing-Bike-Project/master/images/patreon_button.svg"></a> <a href="https://liberapay.com/marcoEDU/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
 
 [Click here](#photos) to see photos of the bike.
 
