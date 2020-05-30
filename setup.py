@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="glowingbike",  # Replace with your own username
-    version="1.0.7",
+    version="1.0.8",
     author="Marco",
     author_email=None,
     description="Upgrade your bike with LEDs, raibows and turn signals.",
