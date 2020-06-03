@@ -57,9 +57,9 @@ Bike(test=True).on()
 
 ### Software
 
--  Install MicroPython [on your ESP8266](https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html) or [your ESP32](https://docs.micropython.org/en/latest/esp32/tutorial/intro.html#esp32-intro)
-- copy latest [neopixel_plus.py](https://github.com/marcoEDU/NeoPixelPlus/blob/master/neopixel_plus/neopixel_plus.py) to the main directory of your ESP using the WebREPL.
-- create 'functions' folder on ESP, with all files from the ['functions' folder of The Glowing Bike Project](https://github.com/marcoEDU/The-Glowing-Bike-Project/tree/master/functions)
+- Install MicroPython [on your ESP8266](https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html) or [your ESP32](https://docs.micropython.org/en/latest/esp32/tutorial/intro.html#esp32-intro)
+- copy latest [neopixel_plus.py](https://github.com/glowingkitty/NeoPixelPlus/blob/master/neopixel_plus/neopixel_plus.py) to the main directory of your ESP using the WebREPL.
+- create 'functions' folder on ESP, with all files from the ['functions' folder of The Glowing Bike Project](https://github.com/glowingkitty/The-Glowing-Bike-Project/tree/master/functions)
 - copy 'main.py' and 'bike.py' to main directory
 
 ### Electronics overview

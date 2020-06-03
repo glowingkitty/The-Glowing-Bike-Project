@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="glowingbike",  # Replace with your own username
-    version="1.0.8",
+    version="1.0.9",
     author="Marco",
     author_email=None,
     description="Upgrade your bike with LEDs, raibows and turn signals.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/marcoEDU/The-Glowing-Bike-Project",
+    url="https://github.com/glowingkitty/The-Glowing-Bike-Project",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
