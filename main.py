@@ -1,3 +1,3 @@
-from bike import Bike
+from glowingbike import Bike
 
 Bike().on()

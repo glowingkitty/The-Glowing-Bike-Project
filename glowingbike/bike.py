@@ -1,17 +1,16 @@
 import random
 import time
 
-from neopixel_plus import NeoPixel
-
 from glowingbike.functions.driving_animation import DrivingAnimation
 from glowingbike.functions.fadeout_animation import FadeOutAnimation
 from glowingbike.functions.turn_animation import TurnAnimation
+from neopixel_plus import NeoPixel
 
 
 class Bike():
     def __init__(self,
                  leds_front_pin=13,
-                 leds_front_length=9,
+                 leds_front_length=55,
                  leds_front_start_point=0,
                  leds_center_pin=12,
                  leds_center_length=60,
