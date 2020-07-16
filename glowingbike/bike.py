@@ -16,7 +16,7 @@ class Bike():
                  leds_center_length=60,
                  leds_center_start_point=0,
                  leds_back_pin=14,
-                 leds_back_length=58,
+                 leds_back_length=17,
                  leds_back_start_point=-4,
                  switch_left_pin=3,
                  switch_right_pin=1,
