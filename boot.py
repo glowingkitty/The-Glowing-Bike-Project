@@ -2,7 +2,6 @@
 import gc
 import sys
 from os import listdir
-from os.path import isfile
 
 import esp
 import machine
@@ -17,7 +16,7 @@ files_structure = {
     'fadeout_animation.py': 'glowingbike/functions/fadeout_animation.py',
     'turn_animation.py': 'glowingbike/functions/turn_animation.py'
 }
-files = [f for f in listdir() if isfile(f)]
+files = [f for f in listdir() if f.endswith('.py')]
 for filename in files:
     if filename != 'boot.py' and filename != 'main.py' and filename in files_structure:
         os.rename(filename, files_structure[filename])
